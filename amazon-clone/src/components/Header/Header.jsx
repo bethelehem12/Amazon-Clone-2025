@@ -1,5 +1,5 @@
 import React from "react";
-import US from "../../assets/img/US.png";
+import US from "../Carousel/img/US.png";
 import classes from "./Header.module.css";
 import { SlLocationPin } from "react-icons/sl";
 import { BsSearch } from "react-icons/bs";
