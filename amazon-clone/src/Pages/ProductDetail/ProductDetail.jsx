@@ -27,7 +27,9 @@ const ProductDetail = () => {
     <LayOut>
       {/* Wait until product is loaded */}
 
-      {isLoading? (<Loader/>): (<ProductCard product={product}/>)}
+      {isLoading? (<Loader/>): (<ProductCard product={product}
+      flex={true}
+      renderDesc={true}/>)}
       
     </LayOut>
   );

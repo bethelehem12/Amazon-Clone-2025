@@ -1,7 +1,7 @@
 .card_container {
-  width: 250px;
+  width: 260px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  padding: 10px;
+  padding: 10px ;
   color: black;
   text-decoration: none;
   position: relative;
@@ -10,7 +10,7 @@
   display: block;
 }
 .card_container img {
-  padding: 10px;
+  /* padding: 10px; */
   width: 100%;
   height: 200px;
   object-fit: contain;
@@ -49,4 +49,40 @@
 }
 .products_container section {
   margin: 0 auto;
+}
+
+/* ProductCard.jsx styling */
+.products_flexed {
+  box-shadow: none;
+  height: auto;
+  display: flex;
+  gap: 50px;
+  width: 100;
+}
+
+.products_flexed h3 {
+  padding: 20px 0px;
+}
+
+.products_flexed .button{
+  display: block;
+  position: static;
+  width: 150px;
+  margin-right: 40px;
+}
+
+.products_flexed{
+  height: 50vh;
+}
+
+.products_flexed img{
+  width: 300px !important;
+  height: auto;
+}
+
+@media screen and (max-width: 768px){
+  .products_flexed{
+    display: flex;
+    flex-direction: column;
+  }
 }
