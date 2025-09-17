@@ -1,19 +1,20 @@
 
 import "./index.css"
-import Header from "./components/Header/Header"
-import Carousel from "./components/Carousel/Carousel"
-import Category from "./components/Category/Category"
-import Product from "./components/Product/Product"
+// import Header from "./components/Header/Header"
+// import Carousel from "./components/Carousel/Carousel"
+// import Category from "./components/Category/Category"
+// import Product from "./components/Product/Product"
+import Routing from "./Router"
 function App() {
   
 
   return (
     <>
-    
- <Header/>
+    <Routing/>
+ {/* <Header/>
  <Carousel/>
  <Category/>
- <Product/>
+ <Product/> */}
     </>
   )
 }

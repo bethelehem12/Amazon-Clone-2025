@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import classes from "./Category.module.css";
-
+import {Link} from "react-router-dom"
 const CategoryCard = ({ data }) => {
   const [img, setImg] = useState("");
 
@@ -11,7 +11,7 @@ const CategoryCard = ({ data }) => {
       try {
         const res = await fetch(data.imgLink);
         const products = await res.json();
-        setImg(products[2]?.image); // dispay the third product image
+        setImg(products[2]?.image); // display the third product image
       } catch (err) {
         console.error(err);
       }
@@ -23,13 +23,13 @@ const CategoryCard = ({ data }) => {
   return (
     <>
     <div className={classes.category}>
-      <a href="">
+      <Link to={`/category/${data.name}`}>
         <span>
-          <h2>{data.title}</h2>
+          <h2>{data?.title}</h2>
         </span>
-        {img && <img src={img} alt={data.title} />}
+        <img src={img} alt={data.title} />
         <p>Shop Now</p>
-      </a>
+      </Link>
     </div>
     </>
   );

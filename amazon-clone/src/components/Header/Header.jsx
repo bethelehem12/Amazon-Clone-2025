@@ -1,6 +1,7 @@
 import React from "react";
 import US from "../Carousel/img/US.png";
 import classes from "./Header.module.css";
+import {Link} from "react-router-dom" //to prevent page refresh
 import { SlLocationPin } from "react-icons/sl";
 import { BsSearch } from "react-icons/bs";
 import { BiCart } from "react-icons/bi";
@@ -12,12 +13,12 @@ const Header = () => {
         <div className={classes.header_container}>
           {/* logo container*/}
           <div className={classes.logo_container}>
-            <a href="/">
+            <Link to="/">
               <img
                 src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
                 alt="amazon header logo"
               />
-            </a>
+            </Link>
             {/* delivery */}
             <div className={classes.delivery}>
               <span>
@@ -40,29 +41,29 @@ const Header = () => {
 
           {/* right side link */}
           <div className={classes.order_container}>
-            <a href="" className={classes.language}>
+            <Link to="" className={classes.language}>
               <img src={US} alt="USA flag" />
               <select>
                 <option value="EN"></option>
               </select>
-            </a>
+            </Link>
 
             {/* three components */}
 
-            <a href="">
+            <Link to="">
               <p>Sign In</p>
               <span>Account & Lists</span>
-            </a>
+            </Link>
             {/* orders */}
-            <a href="">
+            <Link to="/orders">
               <p>returns</p>
               <span>& Orders</span>
-            </a>
+            </Link>
             {/* cart */}
-            <a href="" className={classes.cart}>
+            <Link to="/cart" className={classes.cart}>
               <BiCart size={35} />
               <span>0</span>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
