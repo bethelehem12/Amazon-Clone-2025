@@ -8,15 +8,15 @@ const ProductCard = ({ product }) => {
   return (
     <div className={`${classes.card_container}`}>
       <Link to={`/products/${id}`}>
-        <img src={image} alt={title} />
+        <img src={image} alt={title} className={classes.img_container} />
       </Link>
       <div>
         <h3>{title}</h3>
         <div className={classes.rating}>
           {/* rating */}
-          <Rating value={rating.rate} precision={0.1} />
+          <Rating value={rating?.rate} precision={0.1} />
           {/* rating count */}
-          <small>{rating.count}</small>
+          <small>{rating?.count}</small>
         </div>
         <div>
           {/* price */}
