@@ -1,4 +1,4 @@
-import React from "react";
+import {useContext} from "react";
 import US from "../Carousel/img/US.png";
 import classes from "./Header.module.css";
 import {Link} from "react-router-dom" //to prevent page refresh
@@ -6,7 +6,14 @@ import { SlLocationPin } from "react-icons/sl";
 import { BsSearch } from "react-icons/bs";
 import { BiCart } from "react-icons/bi";
 import LowerHeader from "./LowerHeader";
+import { DataContext } from "../DataProvider/DataProvider";
+
+
+
+
 const Header = () => {
+  const [{basket}, dispatch] = useContext(DataContext);
+  console.log(basket.length)
   return (
     <>
       <section>
@@ -62,12 +69,12 @@ const Header = () => {
             {/* cart */}
             <Link to="/cart" className={classes.cart}>
               <BiCart size={35} />
-              <span>0</span>
+              <span>{basket.length}</span>
             </Link>
           </div>
         </div>
       </section>
-      <LowerHeader/>
+      <LowerHeader />
     </>
   );
 };
