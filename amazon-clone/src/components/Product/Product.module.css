@@ -15,6 +15,13 @@
   height: 200px;
   object-fit: contain;
 }
+
+/*  */
+/* .description {
+  width: 600px; 
+  word-wrap: break-word;
+} */
+
 .button {
   display: none;
   padding: 5px 10px;

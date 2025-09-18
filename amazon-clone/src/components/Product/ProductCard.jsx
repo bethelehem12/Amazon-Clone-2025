@@ -31,7 +31,8 @@ const addToCart=() =>{
       </Link>
       <div>
         <h3>{title}</h3>
-        {renderDesc && <div style={{ width: "800px" }}>{description}</div>}
+        {renderDesc && <div style={{ width: "750px" }}>{description}</div>}
+        {/* {renderDesc && <div className={classes.description}>{description}</div>} */}
         <div className={classes.rating}>
           {/* rating */}
           <Rating value={rating?.rate} precision={0.1} />

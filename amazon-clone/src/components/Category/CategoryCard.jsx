@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import classes from "./Category.module.css";
 import { Link } from "react-router-dom";
+import placeholder from '../../assets/imgs/placeholder.png'
+
+
+
 const CategoryCard = ({ data }) => {
   const [img, setImg] = useState(null);
 
@@ -9,7 +13,7 @@ const CategoryCard = ({ data }) => {
       try {
         const res = await fetch(data.imgLink);
         const products = await res.json();
-        setImg(products[2]?.image); // display the third product image
+        setImg(products[0]?.image); // display the first product image, if [7] it will show the placeholder Img
       } catch (err) {
         console.error(err);
       }
@@ -29,10 +33,7 @@ const CategoryCard = ({ data }) => {
           {img ? (
             <img src={img} alt={data.title} />
           ) : (
-            <img
-              src="../../assets/imgs/placeholder.png"
-              alt="Placeholder Img"
-            />
+            <img src={ placeholder} alt="Placeholder Img" />
           )}
           <p>Shop Now</p>
         </Link>
