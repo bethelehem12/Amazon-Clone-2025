@@ -1,5 +1,5 @@
 import React from 'react'
-import {FadeLoader} from "react-spinners"
+import {ClipLoader} from "react-spinners"
 const Loader = () => {
   return (
     <div
@@ -10,7 +10,7 @@ const Loader = () => {
         height: "50vh",
       }}
     >
-      <FadeLoader color="#3672d6" />
+      <ClipLoader color="#3672d6" />
     </div>
   );
 }

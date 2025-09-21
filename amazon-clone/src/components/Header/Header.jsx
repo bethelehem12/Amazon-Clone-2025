@@ -8,10 +8,10 @@ import { BiCart } from "react-icons/bi";
 import LowerHeader from "./LowerHeader";
 import { DataContext } from "../DataProvider/DataProvider";
 import { reducer } from "../../utils/reducer";
-
+import {auth} from "../../utils/firebase"
 
 const Header = () => {
-  const [{basket}, dispatch] = useContext(DataContext)
+  const [{user, basket}, dispatch] = useContext(DataContext)
   // show total number of items on cart
   const totalItem= basket?.reduce((amount,item)=>{
     return item.amount + amount
@@ -46,23 +46,41 @@ const Header = () => {
             <select name="search-valet" id="search-valet">
               <option value="">All</option>
             </select>
-            <input type="text" name="txt" id="txt" placeholder="search product" />
-            <BsSearch size={25} />
+            <input
+              type="text"
+              name="txt"
+              id="txt"
+              placeholder="search product"
+            />
+            <BsSearch size={38} />
           </div>
 
           {/* right side link */}
           <div className={classes.order_container}>
             <Link to="/" className={classes.language}>
               <img src={USA} alt="USA flag" />
-              <select id="language" name="language" >
+              <select id="language" name="language">
                 <option value="EN"></option>
               </select>
             </Link>
 
             {/* three components */}
-            <Link to="/auth">
-              <h6 className={classes.smallTxt}> Sign In</h6>
-              <span>Account & Lists</span>
+            <Link to={!user && "/auth"}>
+              <div>
+                {user ? (
+                  <>
+                    <h6 className={classes.smallTxt}>
+                      Hi {user.email?.split("@")[0]}
+                    </h6>
+                    <span onClick={()=>auth.signOut()}>Sign Out</span>
+                  </>
+                ) : (
+                  <>
+                    <h6 className={classes.smallTxt}> Sign In</h6>
+                    <span>Account & Lists</span>
+                  </>
+                )}
+              </div>
             </Link>
             {/* orders */}
             <Link to="/orders">
