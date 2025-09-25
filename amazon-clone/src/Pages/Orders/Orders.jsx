@@ -16,43 +16,7 @@ const Orders = () => {
   const [{ user }, dispatch] = useContext(DataContext);
   const [orders, setOrders] = useState([]);
   useEffect(() => {
-    // if (user) {
-    // doc(collection(db, "users", user.uid, "orders"), orderBy("created", "desc ").onSnapshot((snapshot)=>{
-    //   console.log(snapshot)
-    // }))
 
-    // db.collection("users")
-    //   .doc(user.uid)
-    //   .collection("orders")
-    //   .orderBy("created", "desc")
-    //   .onSnapshot((snapshot) => {
-    //     console.log(snapshot);
-    //     console.log(snapshot);
-    //     setOrders(
-    //       snapshot.docs?.map((doc) => ({
-    //         id: doc.id,
-    //         data: doc.data(),
-    //       }))
-    //     );
-    //   });
-    //   } else {
-    //     setOrders([]);
-    //   }
-    // }, []);
-    //   const fetchOrders = async () => {
-    //     if (!user) return;
-    //     const ordersRef = collection(db, "users", user.uid, "orders");
-    //     const q = query(ordersRef, orderBy("created", "desc"));
-    //     const snapshot = await getDocs(q);
-    //     const ordersData = snapshot.docs.map((doc) => ({
-    //       id: doc.id,
-    //       data: doc.data(),
-    //     }));
-    //     setOrders(ordersData);
-    //   };
-
-    //   fetchOrders();
-    // }, [user]);
     if (!user) {
       setOrders([]);
       return;
