@@ -1,5 +1,5 @@
 .card_container {
-  width: 260px;
+  width: 250px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 10px ;
   color: black;
@@ -15,12 +15,6 @@
   height: 200px;
   object-fit: contain;
 }
-
-/*  */
-/* .description {
-  width: 600px; 
-  word-wrap: break-word;
-} */
 
 .button {
   display: none;

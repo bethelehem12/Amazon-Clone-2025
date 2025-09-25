@@ -7,31 +7,37 @@ import { productUrl } from "../../Api/endPoints";
 import ProductCard from "../../components/Product/ProductCard";
 import Loader from "../../components/Loader/Loader";
 const ProductDetail = () => {
- const [product, setProduct] = useState({});
-   const [isLoading, setIsLoading] = useState(false);
-    const { productId } = useParams();
+  const [product, setProduct] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+  const { productId } = useParams();
   // console.log(productId);
   useEffect(() => {
-     setIsLoading(true);
-    axios.get(`${productUrl}/products/${productId}`)
+    setIsLoading(true);
+    axios
+      .get(`${productUrl}/products/${productId}`)
       .then((res) => {
         setProduct(res.data);
-         setIsLoading(false);
+        setIsLoading(false);
       })
       .catch((err) => {
         console.log(err);
-          setIsLoading(false);
+        setIsLoading(false);
       });
   }, []);
   return (
     <LayOut>
       {/* Wait until product is loaded */}
 
-      {isLoading? (<Loader/>): (<ProductCard product={product}
-      flex={true}
-      renderDesc={true}
-      renderAddCart={true}/>)}
-      
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <ProductCard
+          product={product}
+          flex={true}
+          renderDesc={true}
+          renderAddCart={true}
+        />
+      )}
     </LayOut>
   );
 };
